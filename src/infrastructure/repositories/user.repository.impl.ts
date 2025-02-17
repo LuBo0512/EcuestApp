@@ -1,9 +1,18 @@
 import { User } from 'src/domain/entities';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
-export interface UserRepository {
-  save(user: User): Promise<User>;
-  findByEmail(email: string): Promise<User | null>;
-  findById(id: string): Promise<User | null>;
-  update(id: string, user: Partial<User>): Promise<User | null>;
-  delete(id: string): Promise<boolean>;
+export class UserRepository {
+  constructor(
+    @InjectRepository(User)
+    private readonly userRepository: Repository<User>,
+  ) {}
+
+  async save(user: User): Promise<User> {
+    return await this.userRepository.save(user);
+  }
+
+  async findByEmail(email: string): Promise<User | null> {
+    return await this.userRepository.findOne({ where: { email } });
+  }
 }

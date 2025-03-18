@@ -1,6 +1,6 @@
-import { UserService } from 'src/domain';
-import { User } from 'src/domain/entities';
-import { UserRepository } from 'src/infrastructure';
+import { User } from '../../domain/entities/user/user.entity';
+import { UserService } from '../../domain/services/auth.service';
+import { UserRepository } from '../../infrastructure/repositories/user.repository.impl';
 
 export class LoginUser {
   constructor(

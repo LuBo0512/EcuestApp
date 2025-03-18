@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/encuest-app/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/encuest-app/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/encuest-app",
+  "projects": {
+    "encuest-app": {
+      "type": "application",
+      "root": "apps/encuest-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/encuest-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/encuest-app/tsconfig.app.json"
+      }
+    },
+    "survey-service": {
+      "type": "application",
+      "root": "apps/survey-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/survey-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/survey-service/tsconfig.app.json"
+      }
+    }
   }
 }

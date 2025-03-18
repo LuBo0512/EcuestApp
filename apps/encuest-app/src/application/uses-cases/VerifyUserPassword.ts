@@ -1,5 +1,5 @@
-import { UserService } from 'src/domain';
-import { UserRepository } from 'src/infrastructure';
+import { UserService } from '../../domain/services/auth.service';
+import { UserRepository } from '../../infrastructure/repositories/user.repository.impl';
 
 export class VerifyUserPassword {
   constructor(

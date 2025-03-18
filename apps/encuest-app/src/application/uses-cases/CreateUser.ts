@@ -1,5 +1,5 @@
-import { UserService } from 'src/domain';
-import { User } from 'src/domain/entities';
+import { User } from '../../domain/entities';
+import { UserService } from '../../domain/services/auth.service';
 
 export class CreateUser {
   constructor(private readonly userService: UserService) {}

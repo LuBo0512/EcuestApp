@@ -1,6 +1,6 @@
 import { Controller, Post, Body, HttpCode, HttpStatus } from '@nestjs/common';
-import { CreateUser } from 'src/application/uses-cases/CreateUser';
-import { VerifyUserPassword } from 'src/application/uses-cases/VerifyUserPassword';
+import { CreateUser } from '../../application/uses-cases/CreateUser';
+import { VerifyUserPassword } from '../../application/uses-cases/VerifyUserPassword';
 
 @Controller('users')
 export class UserController {
